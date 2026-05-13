@@ -18,11 +18,11 @@ public class TestMotor extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        DcMotor frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
-        DcMotor frontRight = hardwareMap.get(DcMotor.class, "frontRight");
+        DcMotor frontLeft = hardwareMap.get(DcMotor.class, "frontLeft"); // COLOCAR ESSE NA PORTA 0 DO CONTROL
+        DcMotor frontRight = hardwareMap.get(DcMotor.class, "frontRight"); // COLOCAR ESSE NA PORTA 1 DO CONTROL
 
-        frontLeft.setDirection(DcMotor.Direction.REVERSE);
-        frontRight.setDirection(DcMotor.Direction.REVERSE);
+        frontLeft.setDirection(DcMotor.Direction.FORWARD); // motor 0 no control
+        frontRight.setDirection(DcMotor.Direction.REVERSE); // motor 1 no control
 
         frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -47,8 +47,8 @@ public class TestMotor extends LinearOpMode {
 
 
 
-                frontRight.setPower(0.5);
-                frontLeft.setPower(0.5);
+                frontRight.setPower(1);
+                frontLeft.setPower(1);
 
                 while (opModeIsActive() && (frontLeft.isBusy() && frontRight.isBusy())) {
                     telemetry.addData("status", "Movendo por Encoder...");
