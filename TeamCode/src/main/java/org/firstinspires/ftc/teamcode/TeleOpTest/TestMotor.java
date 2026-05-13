@@ -17,8 +17,8 @@ public class TestMotor extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        DcMotor frontLeft = hardwareMap.get(DcMotor.class, "fl");
-        DcMotor frontRight = hardwareMap.get(DcMotor.class, "fr");
+        DcMotor frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
+        DcMotor frontRight = hardwareMap.get(DcMotor.class, "frontRight");
 
         frontLeft.setDirection(DcMotor.Direction.REVERSE);
         frontRight.setDirection(DcMotor.Direction.REVERSE);
