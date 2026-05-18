@@ -17,21 +17,25 @@ public class TestMotor extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        DcMotor frontLeft = hardwareMap.get(DcMotor.class, "frontLeft"); // COLOCAR ESSE NA PORTA 0 DO CONTROL
-        DcMotor frontRight = hardwareMap.get(DcMotor.class, "frontRight"); // COLOCAR ESSE NA PORTA 1 DO CONTROL
-        DcMotor backLeft = hardwareMap.get(DcMotor.class, "backLeft");
-        DcMotor backRight = hardwareMap.get(DcMotor.class, "backRight");
+        DcMotorEx frontLeft = hardwareMap.get(DcMotorEx.class, "frontLeft"); // COLOCAR ESSE NA PORTA 0 DO CONTROL
+        DcMotorEx frontRight = hardwareMap.get(DcMotorEx.class, "frontRight"); // COLOCAR ESSE NA PORTA 1 DO CONTROL
+        DcMotorEx backLeft = hardwareMap.get(DcMotorEx.class, "backLeft"); //COLOCAR ESSE NA PORTA 2 DO CONTROL
+        DcMotorEx backRight = hardwareMap.get(DcMotorEx.class, "backRight"); //COLOCAR ESSE NA PORTA 3 DO CONTROL
 
-        frontLeft.setDirection(DcMotor.Direction.FORWARD); // motor 0 no control
-        frontRight.setDirection(DcMotor.Direction.FORWARD); // motor 1 no control
-        backLeft.setDirection(DcMotor.Direction.FORWARD);
-        backRight.setDirection(DcMotor.Direction.FORWARD);
+        frontLeft.setDirection(DcMotorEx.Direction.FORWARD); // motor 0 no control
+        frontRight.setDirection(DcMotorEx.Direction.FORWARD); // motor 1 no control
+        backLeft.setDirection(DcMotorEx.Direction.FORWARD); // motor 2 no control
+        backRight.setDirection(DcMotorEx.Direction.FORWARD); // motor 3 no control
 
-        frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontLeft.setVelocity(2488.88);
+        backLeft.setVelocity(2488.88);
+        backRight.setVelocity(2488.88);
 
-        frontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        frontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontLeft.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        frontRight.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+
+        frontRight.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+        frontLeft.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
 
 
         waitForStart();
